@@ -1,0 +1,25 @@
+tensorflow==2.15.0
+torch==2.1.2
+mediapipe==0.10.9
+opencv-python-headless
+pandas
+numpy
+tqdm 
+matplotlib
+scikit-learn
+torchaudio
+scipy
+gdown
+dvc
+mlflow==2.2.2
+notebook
+seaborn
+python-box==6.0.2
+pyYAML
+ensure==1.0.2
+joblib
+types-pyYAML
+scipy
+Flask
+Flask-Cors
+-e .
