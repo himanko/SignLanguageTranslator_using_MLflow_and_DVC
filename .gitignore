@@ -160,3 +160,9 @@ cython_debug/
 #.idea/
 
 artifacts/*
+
+# .gitattributes
+
+# Treat Jupyter Notebook files as binary to preserve LF line endings
+*.ipynb binary
+

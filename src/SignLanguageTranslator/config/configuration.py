@@ -1,6 +1,6 @@
 from SignLanguageTranslator.constants import *
 from SignLanguageTranslator.utils.common import read_yaml, create_directories
-from SignLanguageTranslator.entity.config_entity import DataIngestionConfig
+from SignLanguageTranslator.entity.config_entity import DataIngestionConfig, LandmarksExtractionConfig
 
 class ConfigurationManager:
     def __init__(
@@ -28,3 +28,17 @@ class ConfigurationManager:
         )
 
         return data_ingestion_config
+
+    
+    
+    def get_landmarks_extraction_config(self) -> LandmarksExtractionConfig:
+        config = self.config.landmarks_extraction
+
+        create_directories([config.root_dir])
+
+        landmarks_extraction_config = LandmarksExtractionConfig(
+            root_dir=config.root_dir,
+            com_dir=config.com_dir 
+        )
+
+        return landmarks_extraction_config
