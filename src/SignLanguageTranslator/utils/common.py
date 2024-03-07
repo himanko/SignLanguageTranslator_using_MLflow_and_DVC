@@ -9,6 +9,8 @@ from box import ConfigBox
 from pathlib import Path
 from typing import Any
 import base64
+from typing import Dict, List
+import numpy as np
 
 
 
@@ -123,6 +125,22 @@ def get_size(path: Path) -> str:
     """
     size_in_kb = round(os.path.getsize(path)/1024)
     return f"~ {size_in_kb} KB"
+
+# @ensure_annotations
+def IDX_MAP() -> Dict[str, List[int]]:
+    # Choose required landmarks only, i.e. reduction from 543 to 104
+    IDX_MAP = {
+        "lips": [
+            61, 185, 40, 39, 37, 0, 267, 269, 270, 409,
+            291, 146, 91, 181, 84, 17, 314, 405, 321, 375,
+            78, 191, 80, 81, 82, 13, 312, 311, 310, 415,
+            95, 88, 178, 87, 14, 317, 402, 318, 324, 308,
+        ],
+        "left_hand": list(range(468, 489)),
+        "upper_body": list(range(489, 511)),
+        "right_hand": list(range(522, 543)),
+    }
+    return IDX_MAP
 
 
 def decodeImage(imgstring, fileName):

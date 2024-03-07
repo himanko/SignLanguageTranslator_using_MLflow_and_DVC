@@ -9,3 +9,7 @@ data_ingestion:
 landmarks_extraction:
   root_dir: artifacts/emergency/data_ingestion/data
   com_dir: artifacts/emergency/landmarks_extraction
+
+preprocessing:
+  root_dir: artifacts/emergency/landmarks_extraction
+  com_dir: artifacts/emergency/preprocessing

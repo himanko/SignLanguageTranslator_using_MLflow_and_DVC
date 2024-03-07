@@ -14,3 +14,9 @@ class DataIngestionConfig:
 class LandmarksExtractionConfig:
     root_dir: Path
     com_dir: Path
+
+
+@dataclass(frozen=True)
+class PreprocessingConfig:
+    root_dir: Path
+    com_dir: Path
