@@ -79,7 +79,7 @@ class Preprocessing:
         try:
             # df = self.generate_labels.get_generate_labels()
             total = df.shape[0]
-            npdata = np.zeros((total, 30, 104, 3))
+            npdata = np.zeros((total, 30, 42, 3))
             nplabels = np.zeros(total)
 
             for i, row in tqdm(enumerate(df.iterrows()), total=total):

@@ -13,3 +13,7 @@ landmarks_extraction:
 preprocessing:
   root_dir: artifacts/emergency/landmarks_extraction
   com_dir: artifacts/emergency/preprocessing
+
+base_model:
+  root_dir: artifacts/base_model
+  com_dir: artifacts/base_model
