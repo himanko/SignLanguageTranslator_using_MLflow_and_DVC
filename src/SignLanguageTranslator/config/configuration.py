@@ -3,7 +3,8 @@ from SignLanguageTranslator.utils.common import read_yaml, create_directories
 from SignLanguageTranslator.entity.config_entity import (DataIngestionConfig, 
                                                          LandmarksExtractionConfig, 
                                                          PreprocessingConfig, 
-                                                         PrepareBaseModelConfig)
+                                                         PrepareBaseModelConfig,
+                                                         ModelTrainerConfig)
 
 class ConfigurationManager:
     def __init__(
@@ -73,6 +74,31 @@ class ConfigurationManager:
             params_EMBEDDING_DROPOUT=self.params.EMBEDDING_DROPOUT,
             params_MLP_DROPOUT_RATIO=self.params.MLP_DROPOUT_RATIO,
             params_CLASSIFIER_DROPOUT_RATIO=self.params.CLASSIFIER_DROPOUT_RATIO,
+            params_N_EPOCHS=self.params.N_EPOCHS,
+            params_LR_MAX=self.params.LR_MAX,
+            params_N_WARMUP_EPOCHS=self.params.N_WARMUP_EPOCHS,
+            params_WD_RATIO=self.params.WD_RATIO,
+            params_NUM_CLASSES=self.params.NUM_CLASSES
+
+        )
+
+        return base_model_config
+    
+    def get_model_trainer_config(self) -> ModelTrainerConfig:
+        config = self.config.get_
+
+        create_directories([config.root_dir])
+
+        base_model_config = ModelTrainerConfig(
+            root_dir=Path(config.root_dir),
+            trained_model_path=Path(config.trained_model_path),
+            params_UNITS=self.params.UNITS,
+            params_NUM_BLOCKS=self.params.NUM_BLOCKS,
+            params_MLP_RATIO=self.params.MLP_RATIO,
+            params_EMBEDDING_DROPOUT=self.params.EMBEDDING_DROPOUT,
+            params_MLP_DROPOUT_RATIO=self.params.MLP_DROPOUT_RATIO,
+            params_CLASSIFIER_DROPOUT_RATIO=self.params.CLASSIFIER_DROPOUT_RATIO,
+            params_batch_size=self.params.batch_size,
             params_N_EPOCHS=self.params.N_EPOCHS,
             params_LR_MAX=self.params.LR_MAX,
             params_N_WARMUP_EPOCHS=self.params.N_WARMUP_EPOCHS,

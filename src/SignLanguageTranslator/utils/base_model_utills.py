@@ -9,7 +9,7 @@ from tensorflow.python.keras.layers.pooling import MaxPool1D, GlobalAvgPool1D
 from tensorflow.python.keras.engine import sequential
 from tensorflow.python.keras.activations import softmax, gelu
 from tensorflow.python.keras.initializers.initializers_v2 import HeUniform, GlorotUniform, Constant
-from tensorflow.python.keras import layers, optimizers
+from tensorflow.python.keras import layers
 from SignLanguageTranslator.entity.config_entity import PrepareBaseModelConfig
 from sklearn.model_selection import train_test_split
 from SignLanguageTranslator import logger
